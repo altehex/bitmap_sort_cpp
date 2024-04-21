@@ -12,9 +12,10 @@ Performance worsens as the maximum possible value(DIST) increases. In the follow
 -----------------------------------------------------------------
 Benchmark                       Time             CPU   Iterations
 -----------------------------------------------------------------
-BM_bitmap_sort               39.0 ns         38.9 ns     18136098
-BM_bitmap_sort_min_max       24.7 ns         24.7 ns     29131138
-BM_sort                      10.5 ns         10.5 ns     67003362
+BM_bitmap_sort               39.3 ns         39.3 ns     17847125
+BM_bitmap_sort_min_max       26.2 ns         26.2 ns     26336625
+BM_qsort                      132 ns          132 ns      5306954
+BM_sort                      10.3 ns         10.3 ns     68088153
 ```
 
 ### SIZE = 100
@@ -22,9 +23,10 @@ BM_sort                      10.5 ns         10.5 ns     67003362
 -----------------------------------------------------------------
 Benchmark                       Time             CPU   Iterations
 -----------------------------------------------------------------
-BM_bitmap_sort                220 ns          220 ns      3130183
-BM_bitmap_sort_min_max        190 ns          190 ns      3554883
-BM_sort                       471 ns          471 ns      1387135
+BM_bitmap_sort                233 ns          233 ns      2966174
+BM_bitmap_sort_min_max        184 ns          184 ns      3965656
+BM_qsort                     1828 ns         1826 ns       384468
+BM_sort                       456 ns          456 ns      1449596
 ```
 
 ### SIZE = 1000
@@ -32,9 +34,10 @@ BM_sort                       471 ns          471 ns      1387135
 -----------------------------------------------------------------
 Benchmark                       Time             CPU   Iterations
 -----------------------------------------------------------------
-BM_bitmap_sort               2468 ns         2465 ns       292130
-BM_bitmap_sort_min_max       2140 ns         2138 ns       325280
-BM_sort                      7687 ns         7679 ns        90787
+BM_bitmap_sort               2730 ns         2727 ns       258217
+BM_bitmap_sort_min_max       2134 ns         2131 ns       327466
+BM_qsort                    20966 ns        20942 ns        33445
+BM_sort                      7661 ns         7652 ns        91718
 ```
 
 ### SIZE = 10^7 (phone number sorting simulation)
@@ -42,7 +45,8 @@ BM_sort                      7687 ns         7679 ns        90787
 -----------------------------------------------------------------
 Benchmark                       Time             CPU   Iterations
 -----------------------------------------------------------------
-BM_bitmap_sort           73006674 ns     72686436 ns            9
-BM_bitmap_sort_min_max   65324549 ns     64941644 ns           10
-BM_sort                 812270826 ns    808860171 ns            1
+BM_bitmap_sort           71221903 ns     70800308 ns            9
+BM_bitmap_sort_min_max   64665148 ns     64412033 ns           10
+BM_qsort                456262049 ns    454764232 ns            2
+BM_sort                 799785703 ns    798275555 ns            1
 ```

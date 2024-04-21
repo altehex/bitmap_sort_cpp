@@ -1,5 +1,7 @@
 #include <algorithm>
 #include <chrono>
+#include <cstdlib>
+#include <functional>
 #include <iostream>
 #include <random>
 #include <vector>
@@ -49,6 +51,18 @@ static void BM_bitmap_sort_min_max(benchmark::State & state)
 		bitmap_sort(v.begin(), v.end(), 0, DIST);
 }
 BENCHMARK(BM_bitmap_sort_min_max);
+
+
+static void BM_qsort(benchmark::State & state)
+{
+	vector<int> v = generate_vector(SIZE, DIST);
+	auto cmp = [](const void * x,
+				  const void * y) -> int { return x < y; };
+	
+	for (auto _ : state)
+		qsort(v.data(), v.size(), sizeof(int), cmp);
+}
+BENCHMARK(BM_qsort);
 
 
 static void BM_sort(benchmark::State & state)
